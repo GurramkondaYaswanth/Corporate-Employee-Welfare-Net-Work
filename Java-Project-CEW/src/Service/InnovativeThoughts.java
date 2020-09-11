@@ -8,6 +8,7 @@ import model.User;
 public class InnovativeThoughts {
 	User user = new User();
 	ArrayList<String> ITstr = new ArrayList<String>();
+	//convertPdf CPdf = new convertPdf();
 	Scanner sc = new Scanner(System.in);
 	public void IT(String email,String password) {  //function which takes the input for the functions of innovative thoughts
 		System.out.println("");
@@ -31,69 +32,80 @@ public class InnovativeThoughts {
 			ITdisplay();
 			 ITback(email, password);
 		}else if(ITviewPost == 2) {         //for adding the innovative thoughts list
-			System.out.print("Your innovative Idea: ");
-			String newThough = sc.nextLine();
-			newThough=newThough+ " by "+email;
-			ITstr.add(newThough);
-			System.out.println("");
-			System.out.println("*********************.****************Innovative thoughts list after adding ur thought***************************************");
+			ITPost(email, password);
 			ITdisplay();
 			ITback(email, password);
 		}else if(ITviewPost == 3) {  //for deleting the innovative thought that is posted
 			ITdisplay();//getting the index of the innovative thought that is want to be deleted
-			 System.out.print("Enter the number of the innovative thought from the above list to delete: ");
-			 int deleteNumber = sc.nextInt();
-			 sc.nextLine();  //getting the password of user for checking
-			 System.out.print("Enter ur password for confirmation: ");
-			 String confirmPassword = sc.nextLine();
-			 //checking whether the user is HR or the same user who posted
-			 int index = deleteNumber-1;
-			 String ITdel = ITstr.get(index);
-			 String delEmail = ITdel.substring(ITdel.lastIndexOf(" ")+1);
-			 //System.out.println("deleting post email: "+delEmail);
-			 if( (email.equalsIgnoreCase(delEmail) && confirmPassword.equals(password)) || confirmPassword.equals("Hr@12345")) {
-				 deleteNumber = deleteNumber-1;
-				 ITstr.remove(deleteNumber);
-				 System.out.println("");
-				 System.out.println("******************************************Innovative thoughts list after deletion********************************************");
-				 ITdisplay();
-			 }else {
-				 System.out.println();
-				 System.out.println("only HR or the user who posted can delet this post");	 
-			 }
+			ITdelete(email, password);
 			 ITback(email, password);
-		}else if(ITviewPost == 4) {
+		}else if(ITviewPost == 4) {      //for searching
 			ITsearch();
 			ITback(email,password);
 		}
 	}
 	
-	public void ITdisplay() {
+	
+	public void ITdisplay() {    //for displaying
 		
 		int j =1;
 		 for (String i : ITstr) {
 		      System.out.println(j+". "+i);
+		      //CPdf.pdf(i);
 		      j++;
 		    }
 		
 	}
 	
-	public void ITsearch() {
+	public void ITPost(String email, String password) {  //for posting
+		System.out.print("Your innovative Idea: ");
+		String newThough = sc.nextLine();
+		newThough=newThough+ " by "+email;
+		ITstr.add(newThough);
+		System.out.println("");
+		System.out.println("**************************************Innovative thoughts list after adding ur thought***************************************");
+	}
+	
+	public void ITdelete(String email, String password) {    //for deleting
+		System.out.println("");
+		System.out.print("Enter the number of the innovative thought from the above list to delete: ");
+		 int deleteNumber = sc.nextInt();
+		 sc.nextLine();  //getting the password of user for checking
+		 System.out.print("Enter ur password for confirmation: ");
+		 String confirmPassword = sc.nextLine();
+		 //checking whether the user is HR or the same user who posted
+		 int index = deleteNumber-1;
+		 String ITdel = ITstr.get(index);
+		 String delEmail = ITdel.substring(ITdel.lastIndexOf(" ")+1);
+		 //System.out.println("deleting post email: "+delEmail);
+		 if( (email.equalsIgnoreCase(delEmail) && confirmPassword.equals(password)) || confirmPassword.equals("Hr@12345")) {
+			 deleteNumber = deleteNumber-1;
+			 ITstr.remove(deleteNumber);
+			 System.out.println("");
+			 System.out.println("******************************************Innovative thoughts list after deletion********************************************");
+			 ITdisplay();
+		 }else {
+			 System.out.println();
+			 System.out.println("only HR or the user who posted can delet this post");	 
+		 }
+	}
+	
+	public void ITsearch() {      //for filtering
 		System.out.println("");
 		System.out.print("search word (Lower case): ");
 		String search = sc.nextLine();
 		System.out.println("***************************************Innovative thoughts list after filtering**************************************");
 		 System.out.println("");
-		 
 		int j =1;
 		for (String i : ITstr) {
 			String str = i.toLowerCase();
-			if(str.contains(search)) {
+			if(str.contains(search)) {          //checking whether the word is in the string
 		      System.out.println(j+". "+i);
 			}
 		    j++;
 		}	
 	}
+	
 	
 	public void ITback(String email,String password) {
 		//for going back to the services/functionalities or for choosing other functions of Innovative thoughts

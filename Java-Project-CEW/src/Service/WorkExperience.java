@@ -11,7 +11,7 @@ public class WorkExperience {
 	Scanner sc = new Scanner(System.in);
 	public void WE(String email,String password) {
 		System.out.println("");
-		System.out.println("******************************************************Work Experience********************************************************");
+		System.out.println("*********************************************************Work Experience***************************************************************");
 		if(WEstr.size() == 0) {  //adding some default experience of employee
 			WEstr.add("Gurramkonda Yaswanth  Full stack developer   Fresher       03/09/20 17:00:39   Gurramkondayaswanth@gmail.com     Java,JavaScript,HTML,CSS,DSA" );
 			WEstr.add("Bill Gates            Chair Person           45 years      03/09/20 17:05:39   Billgates@gmail.com               Big Picture, Focus,Passionate,Leadership...");
@@ -28,7 +28,7 @@ public class WorkExperience {
 		
 		
 		if(WEviewPostDelSearch == 1) { //viewing
-			System.out.println("*********************************************Work Experience of Employees***********************************************");
+			System.out.println("******************************************************Work Experience of Employees*****************************************************");
 			WEdisplay();
 			WEback(email,password);
 		}else if(WEviewPostDelSearch == 2) { //posting
@@ -117,7 +117,7 @@ public class WorkExperience {
 		String post = Name+Designation+Experience+df.format(dateobj)+"   "+Empemail+details;
 		WEstr.add(post);
 		System.out.println("");
-		System.out.println("********************************************Work Experience of Employees after adding ***************************************************");
+		System.out.println("*********************************************Work Experience of Employees after adding ************************************************");
 		
 	}
 	
@@ -131,7 +131,7 @@ public class WorkExperience {
 	}
 	
 	public void WEsearch() {
-		System.out.println("");
+		//System.out.println("");
 		System.out.print("search word (Lower case): ");
 		String search = sc.nextLine();
 		 System.out.println("*********************************************Work Experience of Employees after filtering**********************************************");
@@ -157,7 +157,7 @@ public class WorkExperience {
 					 BTC.BackToCRUD(email, password);
 				 }else if(goback == 3){
 					 System.out.println();
-					 System.out.println("***************************************************Have a great day*******************************************************");
+					 System.out.println("**********************************************************Have a great day*************************************************************");
 				 }else if(goback == 2) {
 					 WE(email, password);
 				 }

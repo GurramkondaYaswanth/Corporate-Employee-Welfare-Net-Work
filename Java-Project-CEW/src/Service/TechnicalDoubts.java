@@ -45,7 +45,7 @@ public class TechnicalDoubts {
 			TDAns(email,password);
 			TDdisplay();
 			TDback(email,password);
-		}else if(TDviewPostDelAns == 5) {  //answer
+		}else if(TDviewPostDelAns == 5) {  //search
 			TDsearch();
 			TDback(email,password);
 		}
