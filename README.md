@@ -10,7 +10,6 @@ All corporate employees can share the following points using the CEW fully funct
 8. Matrimonial  
 9. Birthdays  
 10.Travel / Picnic / Get together Plans 
-
 In this project, There will be two categories of peoples who will login, one is HR and other is Employee's. Email is case-insensitive.
 
 Hr's access:
@@ -19,12 +18,8 @@ Hr's access:
 3. If you want to change password use Hr email as "Hr@gmail.com" only while signup. password can be your wish
 
 Employee's accesses:
-1.Employee can login or signup.
+1.Employee can login or signup.  
 2.For services like work experience, company growth, job vacancy, company events, birthdays and travel, Employee have access to the functionalities 
-  like viewing, searching and go backonly
-3.for remaining 4 services u have acces to view, search, post, go back and delete your previous posts.
+  like viewing, searching and go backonly.  
+3.for remaining 4 services u have acces to view, search, post, go back and delete your previous posts.  
 4. Default login details for employee are Email: "Employee@gmail.com" and password: "Employee@12345".
-
-
-
-
