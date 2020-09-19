@@ -9,7 +9,7 @@ All corporate employees can share the following points using the CEW fully funct
 7. All company Employee referral(job vacancy)  
 8. Matrimonial  
 9. Birthdays  
-10.Travel / Picnic / Get together Plans.
+10.Travel / Picnic / Get together Plans
 
 In this project, There will be two categories of peoples who will login, one is HR and other is Employee's. Email is case-insensitive.
 
