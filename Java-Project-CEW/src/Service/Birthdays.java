@@ -95,9 +95,16 @@ public class Birthdays {
 		 System.out.print("Enter the Employee Birthday number/index from the above list to delete: ");
 		 int deleteNumber = sc.nextInt();
 		 deleteNumber = deleteNumber-1;
+		 if(deleteNumber <= BDstr.size()) {
 		 BDstr.remove(deleteNumber);
 		 System.out.println("");
 		 System.out.println("***************************************Employee Birthdays after deleting ***************************************");
+	}else {
+		  System.out.println("");
+		  System.out.println("Invalid Input"); 
+		  System.out.println("");
+		  System.out.println("*********************************************************Employee Birthdays***************************************************************");
+		 }
 	}
 	
 	public void BDsearch() {

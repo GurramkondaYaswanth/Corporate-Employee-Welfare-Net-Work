@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 import model.User;
 
 public class RegistrationValidation{
-	User user = new User();
+	//User user = new User();
 	Scanner sc = new Scanner(System.in);
 	public boolean checkUserDetails(String email, String password) {
 		
@@ -22,8 +22,8 @@ public class RegistrationValidation{
 		if(validEmail(email) && validPassword(password,confirmPassword)) {
 			System.out.println("Account has been created Sucessfully");
 			//User user = new User(email, password);
-			user.setEmail(email);
-			user.setPassword(password);
+			//user.setEmail(email);
+			//user.setPassword(password);
 			return true;
 		}else {
 			System.out.println("Invalid credentials");

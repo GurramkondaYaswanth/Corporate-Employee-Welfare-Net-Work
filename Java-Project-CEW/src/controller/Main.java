@@ -47,9 +47,9 @@ public class Main {
 			email = sc.nextLine();
 			System.out.print("Enter the Password: ");
 			password = sc.nextLine();
-			User user = new User();
-			user.setEmail(email);
-			user.setPassword(password);
+			//User user = new User();
+			//user.setEmail(email);
+			//user.setPassword(password);
 			signin = VU.validate(HrEmployee,email,password);
 		}
 		

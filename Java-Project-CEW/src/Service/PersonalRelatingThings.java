@@ -106,13 +106,15 @@ public class PersonalRelatingThings {
 		 String confirmPassword = sc.nextLine();
 		 //checking whether the user is HR or the same user who posted
 		 int delIndex = deleteNumber-1; 
+		 deleteNumber = deleteNumber-1;
+		 if(deleteNumber <= PRTstr.size()) {
 		 String PRTdel = PRTstr.get(delIndex);
 		 String delEmail = PRTdel.substring((PRTdel.indexOf("by")+3),(PRTdel.indexOf(".com")+4) );  //for getting author email
 		// System.out.println("deleting post email: "+delEmail);
 		 //boolean ifcond = (email.equalsIgnoreCase(delEmail) && confirmPassword.equals(password));
 		 //System.out.println(ifcond);
 		 if( (email.equalsIgnoreCase(delEmail) && confirmPassword.equals(password)) || confirmPassword.equals("Hr@12345")) {
-			 deleteNumber = deleteNumber-1;
+			 
 			 PRTstr.remove(deleteNumber);
 			 System.out.println("");
 			 System.out.println("*********************************************Property sales and Home rent list after deletion**********************************************");
@@ -120,6 +122,13 @@ public class PersonalRelatingThings {
 		 }else {	
 			 System.out.println();
 			 System.out.println("only HR or the user who posted can delete this post");
+		 }
+	 }else {
+		  System.out.println("");
+		  System.out.println("Invalid Input"); 
+		  System.out.println("");
+		  System.out.println("******************************************************Property sales and Home rent list*******************************************************");
+		  PRTdisplay();
 		 }
 	}
 	

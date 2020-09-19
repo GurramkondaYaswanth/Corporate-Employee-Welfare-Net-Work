@@ -6,7 +6,7 @@ import java.util.Scanner;
 import model.User;
 
 public class InnovativeThoughts {
-	User user = new User();
+	//User user = new User();
 	ArrayList<String> ITstr = new ArrayList<String>();
 	//convertPdf CPdf = new convertPdf();
 	Scanner sc = new Scanner(System.in);
@@ -75,11 +75,14 @@ public class InnovativeThoughts {
 		 String confirmPassword = sc.nextLine();
 		 //checking whether the user is HR or the same user who posted
 		 int index = deleteNumber-1;
+		 deleteNumber = deleteNumber-1;
+		 if(deleteNumber <= ITstr.size()) {
 		 String ITdel = ITstr.get(index);
 		 String delEmail = ITdel.substring(ITdel.lastIndexOf(" ")+1);
 		 //System.out.println("deleting post email: "+delEmail);
+		 
 		 if( (email.equalsIgnoreCase(delEmail) && confirmPassword.equals(password)) || confirmPassword.equals("Hr@12345")) {
-			 deleteNumber = deleteNumber-1;
+			 
 			 ITstr.remove(deleteNumber);
 			 System.out.println("");
 			 System.out.println("******************************************Innovative thoughts list after deletion********************************************");
@@ -88,6 +91,13 @@ public class InnovativeThoughts {
 			 System.out.println();
 			 System.out.println("only HR or the user who posted can delet this post");	 
 		 }
+		 }else {
+			  System.out.println("");
+			  System.out.println("Invalid Input"); 
+			  System.out.println("");
+			  System.out.println("*********************************************************Innovative thoughts***************************************************************");
+			  ITdisplay();
+			 }
 	}
 	
 	public void ITsearch() {      //for filtering

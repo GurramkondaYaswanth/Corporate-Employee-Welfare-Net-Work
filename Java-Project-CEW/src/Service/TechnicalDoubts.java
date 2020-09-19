@@ -9,7 +9,7 @@ import model.User;
 public class TechnicalDoubts {
 	ArrayList<String> TDstr = new ArrayList<String>();
 	Scanner sc = new Scanner(System.in);
-	User user = new User();
+	//User user = new User();
 	
 	public void TD(String email, String password) {
 		//Scanner sc = new Scanner(System.in);
@@ -80,13 +80,15 @@ public class TechnicalDoubts {
 		 String confirmPassword = sc.nextLine();
 		 //checking whether the user is HR or the same user who posted
 		 int delIndex = deleteNumber-1; 
+		 deleteNumber = deleteNumber-1;
+		 if(deleteNumber <= TDstr.size()) {
 		 String TDdel = TDstr.get(delIndex);
 		 String delEmail = TDdel.substring((TDdel.indexOf("by")+3),(TDdel.indexOf(".com")+4) );  //for getting author email
 		// System.out.println("deleting post email: "+delEmail);
 		 //boolean ifcond = (email.equalsIgnoreCase(delEmail) && confirmPassword.equals(password));
 		 //System.out.println(ifcond);
 		 if( (email.equalsIgnoreCase(delEmail) && confirmPassword.equals(password)) || confirmPassword.equals("Hr@12345")) {
-			 deleteNumber = deleteNumber-1;
+			 
 			 TDstr.remove(deleteNumber);
 			 System.out.println("");
 			 System.out.println("******************************************Technical Doubts list after deletion********************************************");
@@ -94,6 +96,13 @@ public class TechnicalDoubts {
 		 }else {	
 			 System.out.println();
 			 System.out.println("only HR or the user who posted can delete this post");
+		 }
+	 }else {
+		  System.out.println("");
+		  System.out.println("Invalid Input"); 
+		  System.out.println("");
+		  System.out.println("*************************************************Technical Doubts list*******************************************************");
+		  TDdisplay();
 		 }
 	}
 	

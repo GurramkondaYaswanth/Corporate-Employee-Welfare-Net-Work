@@ -92,9 +92,16 @@ public class CompanyGrowth {
 		 System.out.print("Enter the number of the Company Growth link from the above list to delete: ");
 		 int deleteNumber = sc.nextInt();
 		 deleteNumber = deleteNumber-1;
+		 if(deleteNumber <= CGstr.size()) {
 		 CGstr.remove(deleteNumber);
 		 System.out.println("");
 		 System.out.println("***************************************Company Growth links after deleting ***************************************");
+	}else {
+		  System.out.println("");
+		  System.out.println("Invalid Input"); 
+		  System.out.println("");
+		  System.out.println("*********************************************************Company Growth***************************************************************");
+		 }
 	}
 	
 	public void CGsearch() {

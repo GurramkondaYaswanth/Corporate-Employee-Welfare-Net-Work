@@ -6,7 +6,7 @@ import model.User;
 
 public class ValidateUser {
 	Scanner sc = new Scanner(System.in);
-	User user = new User();
+	//User user = new User();
 	public boolean validate(int HrEmp,String email, String password) {
 		//user.validateip();
 //		System.out.println();

@@ -104,9 +104,16 @@ public class CompanyEvents {
 		 System.out.print("Enter the number of the innovative thought from the above list to delete: ");
 		 int deleteNumber = sc.nextInt();
 		 deleteNumber = deleteNumber-1;
+		 if(deleteNumber <= CEstr.size()) {
 		 CEstr.remove(deleteNumber);
 		 System.out.println("");
 		 System.out.println("***************************************Company Events photo share links after deleting *************************************");
+		 }else {
+			  System.out.println("");
+			  System.out.println("Invalid Input"); 
+			  System.out.println("");
+			  System.out.println("*********************************************************Company Events***************************************************************");
+			 }
 	}
 	
 	public void CEsearch() {

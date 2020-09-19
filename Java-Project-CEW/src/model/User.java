@@ -18,21 +18,13 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public User(String email, String password, Scanner sc) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.sc = sc;
+	}
 	
-//	public void validateip() {
-//		System.out.println();
-//		System.out.println("login Credentials");
-//		System.out.print("Enter your office mail id: ");
-//		String email = sc.nextLine();
-//		System.out.print("Enter the Password: ");
-//		String password = sc.nextLine();
-//		setEmail(email);
-//		setPassword(password);
-//	}
-//	public User(String email, String password) {
-//		super();
-//		this.email = email;
-//		this.password = password;
-//	}
+
 	
 }

@@ -125,9 +125,17 @@ public class WorkExperience {
 		 System.out.print("Enter the Work Experience of Employee number from the above list to delete: ");
 		 int deleteNumber = sc.nextInt();
 		 deleteNumber = deleteNumber-1;
+		 if(deleteNumber <= WEstr.size()) {
+			// System.out.println(WEstr.size());
 		 WEstr.remove(deleteNumber);
 		 System.out.println("");
 		 System.out.println("*********************************************Work Experience of Employees after deleting **********************************************");
+		 }else {
+		  System.out.println("");
+		  System.out.println("Invalid Input"); 
+		  System.out.println("");
+		  System.out.println("*********************************************************Work Experience***************************************************************");
+		 }
 	}
 	
 	public void WEsearch() {

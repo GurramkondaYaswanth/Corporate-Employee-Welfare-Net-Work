@@ -111,16 +111,24 @@ public class VacationPlansGetTogether {
 		 System.out.print("Enter the Travel/Get together Plans number/index from the above list to delete: ");
 		 int deleteNumber = sc.nextInt();
 		 deleteNumber = deleteNumber-1;
+		 if(deleteNumber <= VPGTstr.size()) {
 		 VPGTstr.remove(deleteNumber);
 		 System.out.println("");
-		 System.out.println("***************************************Travel/Get together Plans after deleting ***************************************");
+		 System.out.println("*******************************************Travel/Get together Plans after deleting *****************************************");
+		}else {
+		 System.out.println("");
+		 System.out.println("Invalid Input"); 
+		 System.out.println("");
+		 System.out.println("***********************************************Travel/Get together Plans*****************************************************");
+		}
+		 
 	}
 	
 	public void VPGTsearch() {
 		System.out.println("");
 		System.out.print("search word (Lower case): ");
 		String search = sc.nextLine();
-		System.out.println("*********************************************Travel/Get together Plans after filtering***********************************************");
+		System.out.println("******************************************Travel/Get together Plans after filtering********************************************");
 		 System.out.println("");
 		System.out.println("Event                Location          Date & Time                  Reg Link");
 		int j =1;

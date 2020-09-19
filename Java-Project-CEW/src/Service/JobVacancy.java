@@ -101,9 +101,16 @@ public class JobVacancy {
 		 System.out.print("Enter the Job Vacancy number from the above list to delete: ");
 		 int deleteNumber = sc.nextInt();
 		 deleteNumber = deleteNumber-1;
+		 if(deleteNumber <= JVstr.size()) {
 		 JVstr.remove(deleteNumber);
 		 System.out.println("");
 		 System.out.println("*********************************************Job Vacancies list after deleting **********************************************");
+	}else {
+		  System.out.println("");
+		  System.out.println("Invalid Input"); 
+		  System.out.println("");
+		  System.out.println("**************************************************Job Vacancies list*********************************************************");
+		 }
 	}
 	
 	public void JVsearch() {

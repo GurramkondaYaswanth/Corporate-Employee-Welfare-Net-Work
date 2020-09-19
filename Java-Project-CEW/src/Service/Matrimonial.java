@@ -101,13 +101,15 @@ public class Matrimonial {
 		 String confirmPassword = sc.nextLine();
 		 //checking whether the user is HR or the same user who posted
 		 int delIndex = deleteNumber-1; 
+		 
+		 deleteNumber = deleteNumber-1;
+		 if(deleteNumber <= Mstr.size()) {
 		 String Mdel = Mstr.get(delIndex);
 		 String delEmail = Mdel.substring((Mdel.indexOf("by")+3),(Mdel.indexOf(".com")+4) );  //for getting author email
 		// System.out.println("deleting post email: "+delEmail);
 		 //boolean ifcond = (email.equalsIgnoreCase(delEmail) && confirmPassword.equals(password));
 		 //System.out.println(ifcond);
 		 if( (email.equalsIgnoreCase(delEmail) && confirmPassword.equals(password)) || confirmPassword.equals("Hr@12345")) {
-			 deleteNumber = deleteNumber-1;
 			 Mstr.remove(deleteNumber);
 			 System.out.println("");
 			 System.out.println("*********************************************Matrimonial list after deletion**********************************************");
@@ -115,6 +117,13 @@ public class Matrimonial {
 		 }else {	
 			 System.out.println();
 			 System.out.println("only HR or the user who posted can delete this post");
+		 }
+	     }else {
+		  System.out.println("");
+		  System.out.println("Invalid Input"); 
+		  System.out.println("");
+		  System.out.println("*********************************************************Matrimonial list*****************************************************");
+		  Mdisplay();
 		 }
 	}
 	
